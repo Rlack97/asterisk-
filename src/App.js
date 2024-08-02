@@ -1,14 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Info from "./components/Info";
+import Landing from "./components/Landing";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Asterisk Page</p>
-      </header>
-    </div>
+    <BrowserRouter className="App" basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/info" element={<Info />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
